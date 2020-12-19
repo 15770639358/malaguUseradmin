@@ -1,0 +1,9 @@
+targets:
+  - backend
+malagu:
+  session:
+    autoCommit: true                  # 自动提交保存已经变更过的 Session，为 false，则需要手动提交
+    maxAge: 86400000                  # Session 对象有效时间
+    sessionIdKey: malagu:sessionId    # 获取或者存储 Session 对象 Id 的 Key
+    sessionKey: malagu:session        # 获取或者存储 Session 对象 的 Key
+    renew: false

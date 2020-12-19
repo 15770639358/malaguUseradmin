@@ -1,0 +1,67 @@
+malagu:
+  name: Malagu Framework
+  hostDomId: malagu-root
+  logger:
+    level: info
+  webpack:
+    toES5Plugin:
+      include:
+        class-transformer: class-transformer
+        vscode-jsonrpc: vscode-jsonrpc
+  session:
+    autoCommit: true
+    maxAge: 86400000
+    sessionIdKey: 'malagu:sessionId'
+    sessionKey: 'malagu:session'
+  server:
+    path: /
+    port: 3000
+    endpoint: 'http://localhost:3000'
+  trace:
+    requestField: X-Malagu-Trace-ID
+    responseField: X-Malagu-Trace-ID
+  web:
+    route:
+      cacheSize: 500
+  client:
+    config:
+      withCredentials: true
+  mvc:
+    path: /*
+    defaultViewName: json
+  mustache:
+    cache: false
+    baseViewDir: assets/views
+  rpc:
+    path: api
+    merge:
+      enabled: false
+      timerDelay: 35
+      maxLength: 5242880
+      maxCount: 100
+  core:
+    validationPipeOptions:
+      detailedOutputDisabled: false
+      transformEnabled: true
+  cookies:
+    keys:
+      - abcdef
+mode:
+  - local
+webpackHooks: []
+initHooks: []
+configHooks: []
+buildHooks: []
+deployHooks: []
+serveHooks: []
+cliHooks: []
+targets:
+  - backend
+server:
+  port: 3001
+entry: '@malagu/core/lib/common/application/application-entry'
+devEntry: '@malagu/web/lib/node/application/dev-application-entry'
+staticModules: []
+modules:
+  - src\node\module
+assets: []

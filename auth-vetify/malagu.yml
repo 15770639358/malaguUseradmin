@@ -1,0 +1,15 @@
+targets:
+  - backend
+backend:
+  malagu:
+    typeorm:
+      ormConfig:
+        - type: mysql
+          host: 43.226.149.141
+          port: 3306
+          synchronize: true
+          username: useradmin
+          password: '123456'
+          database: useradmin
+server:
+  port: 3002

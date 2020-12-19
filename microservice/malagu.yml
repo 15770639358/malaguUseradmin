@@ -1,0 +1,4 @@
+targets:
+  - backend
+server:
+  port: 3001
